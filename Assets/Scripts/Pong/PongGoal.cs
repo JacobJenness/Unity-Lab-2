@@ -5,25 +5,22 @@ using System;
 
 public class PongGoal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] public bool isPlayer1Goal;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public event Action onScore;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            onScore?.Invoke();
+            if(!isPlayer1Goal)
+            {
+                Debug.Log("Player 2 Scored!");
+                GameObject.Find("GameManager").GetComponent<PongManager>().Player2Scored();
+            }
+            else
+            {
+                Debug.Log("Player 1 Scored!");
+                GameObject.Find("GameManager").GetComponent<PongManager>().Player1Scored();
+            }
         }
     }
 }

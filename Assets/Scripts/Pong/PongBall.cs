@@ -12,7 +12,7 @@ public class PongBall : MonoBehaviour
         Restart();
     }
 
-    void Restart()
+    public void Restart()
     {
         mainRigidBody.position = Vector2.zero;
         mainRigidBody.velocity = Vector2.zero;
@@ -23,7 +23,7 @@ public class PongBall : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
 
-            Vector2 newVelocity = new Vector2(Random.Range(-5f, 5f), Random.Range(0f, 1f));
+            Vector2 newVelocity = new Vector2(Random.Range(-5f, 5f), Random.Range(-2f, 2f));
             mainRigidBody.velocity = newVelocity.normalized * startSpeed;
         }
     }
