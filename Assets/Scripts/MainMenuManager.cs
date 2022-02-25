@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button platformerButton;
     [SerializeField] private Button threeDSpawnButton;
     [SerializeField] private Button pongButton;
+    [SerializeField] private Button FPSButton;
     [SerializeField] private GameObject creditsUI;
 
     void Awake()
@@ -19,6 +20,7 @@ public class MainMenuManager : MonoBehaviour
         platformerButton.onClick.AddListener(() => LoadingScreen.LoadScene("NotQuitePlatformer"));
         threeDSpawnButton.onClick.AddListener(() => LoadingScreen.LoadScene("3DSpawn"));
         pongButton.onClick.AddListener(() => LoadingScreen.LoadScene("Pong"));
+        FPSButton.onClick.AddListener(() => LoadingScreen.LoadScene("FPS"));
 
         openCreditsButton.onClick.AddListener(() => { creditsUI.SetActive(true); });
         closeCreditsButton.onClick.AddListener(() => { creditsUI.SetActive(false); });
