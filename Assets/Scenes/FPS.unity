@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 71bc1ccdb687e204da0edb42c7b5d744, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -214,7 +214,7 @@ Transform:
   m_GameObject: {fileID: 67858634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -282,11 +282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a8127fe1277bd499ea63191f9df51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPosition: {fileID: 0}
-  head: {fileID: 0}
-  bullets: []
+  shootPosition: {fileID: 1413082363}
+  head: {fileID: 908082315}
+  bullets:
+  - {fileID: 1989175199745720554, guid: 05d2fd28978936446b2c889118bd96fe, type: 3}
   shootSound: {fileID: 0}
-  maxHealth: 0
+  maxHealth: 100
 --- !u!1 &908566699
 GameObject:
   m_ObjectHideFlags: 0

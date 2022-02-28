@@ -11,12 +11,16 @@ public class FPSPlayer : MonoBehaviour
     //[SerializeField] private FPSUI fpsUI;
     [SerializeField] private int maxHealth;
 
+    public static FPSPlayer instance;
+
     void Awake()
     {
+        instance = this;
         Health = maxHealth;
     }
 
     // Update is called once per frame
+    // Shoots a bullet on click
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -46,6 +50,7 @@ public class FPSPlayer : MonoBehaviour
         }
     }
 
+    // Handles the player health after being hit by an enemy
     private float lastHitTime;
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -65,5 +70,15 @@ public class FPSPlayer : MonoBehaviour
     {
         enemyDefeatCount++;
         //fpsUI.ShowEnemyDefeatCount(enemyDefeatCount);
+    }
+
+    // Determines if enemies should spawn depending on player position
+    public bool ShouldSpawn(Vector3 pos)
+    {
+        Vector3 posDiff = pos - transform.position;
+        Vector3 faceDirection = head.forward;
+        float distanceFromPlayer = posDiff.magnitude;
+
+        return (Vector3.Dot(posDiff.normalized, faceDirection) < 0.5f) && (distanceFromPlayer > 10f);
     }
 }
