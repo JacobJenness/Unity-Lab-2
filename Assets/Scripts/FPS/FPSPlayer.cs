@@ -17,6 +17,7 @@ public class FPSPlayer : MonoBehaviour
     {
         instance = this;
         Health = maxHealth;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

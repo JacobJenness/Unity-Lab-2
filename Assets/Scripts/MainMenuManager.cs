@@ -16,6 +16,7 @@ public class MainMenuManager : MonoBehaviour
 
     void Awake()
     {
+        Cursor.lockState = CursorLockMode.None;
         startButton.onClick.AddListener(() => LoadingScreen.LoadScene("GameScene"));
         platformerButton.onClick.AddListener(() => LoadingScreen.LoadScene("NotQuitePlatformer"));
         threeDSpawnButton.onClick.AddListener(() => LoadingScreen.LoadScene("3DSpawn"));
