@@ -1,6 +1,11 @@
-# Unity Lab 4
-This repo stores the files for Unity Lab's 1, 2, 3, and 4.
+# Unity Lab 6
+This repo stores the files for Unity Labs 1 through 6.
 
-Contains a main menu, gun game, platformer, and a 3D object spawner.
+Contains the following games:
+*Gun Game 
+*Platformer
+*Donut Spawner 
+*FPS 
+*Pong
 
 Written and developed by Jacob Jenness and Elena Lam

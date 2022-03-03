@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Transform mainTransform;
     [SerializeField] private float moveTime;
     [SerializeField] private float moveSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +26,4 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-   
 }

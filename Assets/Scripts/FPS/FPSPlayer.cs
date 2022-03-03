@@ -8,7 +8,7 @@ public class FPSPlayer : MonoBehaviour
     [SerializeField] private Transform head;
     [SerializeField] private GameObject[] bullets;
     [SerializeField] private AudioSource shootSound;
-    //[SerializeField] private FPSUI fpsUI;
+    [SerializeField] private FPSUI fpsUI;
     [SerializeField] private int maxHealth;
 
     public static FPSPlayer instance;
@@ -33,6 +33,7 @@ public class FPSPlayer : MonoBehaviour
         }
     }
 
+    // Keeps track of the player's health
     private int health;
     private int Health
     {
@@ -43,7 +44,7 @@ public class FPSPlayer : MonoBehaviour
         set
         {
             health = value;
-            //fpsUI.ShowHealthFraction((float)Health / (float)maxHealth);
+            fpsUI.ShowHealthFraction((float)Health / (float)maxHealth);
             if(health <= 0)
             {
                 LoadingScreen.LoadScene("MainMenu");
@@ -66,11 +67,12 @@ public class FPSPlayer : MonoBehaviour
         }
     }
 
+    // Handles enemy defeats
     private int enemyDefeatCount;
     public void HandleEnemyDefeat()
     {
         enemyDefeatCount++;
-        //fpsUI.ShowEnemyDefeatCount(enemyDefeatCount);
+        fpsUI.ShowEnemyDefeatCount(enemyDefeatCount);
     }
 
     // Determines if enemies should spawn depending on player position

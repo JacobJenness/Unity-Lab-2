@@ -28,6 +28,7 @@ public class FPSEnemy : MonoBehaviour
         mainTransform.position += (directionToPlayer * moveSpeed * Time.deltaTime).SetY(0);
     }
 
+    // Handle the enemy being defeated
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
